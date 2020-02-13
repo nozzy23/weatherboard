@@ -10,26 +10,32 @@
  create a area to dump the city infomation.
  and broadcast the next 5 day forcast.
  */
-  var userCity= $(".cities").keydown(function(e) {
-
+//suppose to add to history
+  /*var userCity= $(".cities").keydown(function(e) {
     if( e.key == "Enter" ) {
       e.preventDefault();
       var value = $(this).val();
       console.log(value)
-      $("p").text(value);
-      //console.log(e)
+      $(".searchHistory").text(value);
     }
-
+    var addList= $("<li><li>");
+    addList.addClass("list-group-item");
+    addList.text(value);
+    $(".searchHistory").append(addList);
     
-  })
 
-  var locationURL= "https://api.openweathermap.org/data/2.5/weather?q=miami,florida&units=imperial&appid=849cc81e3938b0e67ca2c053350dac29"
+  });
+
+  // gets information of city. 
+  var locationURL= "https://api.openweathermap.org/data/2.5/weather?q="+userCity+"&units=imperial&appid=849cc81e3938b0e67ca2c053350dac29"
+
 
 
 $.ajax({
   url: locationURL,
   method: "GET"
 }).then(function(response){
+  var userCity= 
 $("#cityTitle").text("cities title:" + response.name);
 $("#cityTemperature").text("Temperature:" + response.main.temp);
 $("#cityHumidity").text("Humidity:" + response.main.humidity);
@@ -42,7 +48,35 @@ $.ajax({
   url: UvIndexURL,
   method: "GET"
 }).then(function(response){
-console.log(response);
 $("#UVindex").text("UV?: " + response.value);
 });
 
+var fiveDayURL= "http://api.openweathermap.org//data/2.5/forecast?q=miami,florida&mode=xml&appid=849cc81e3938b0e67ca2c053350dac29units=imperial"
+
+$.ajax({
+  url: fiveDayURL,
+  method: "GET"
+}).then(function(response){
+console.log(response);
+var fiveday=$("<img>");
+
+$("#fiveDayCast").text(response.forecast);
+});*/
+
+$(".btn-city").on("click", function(event){
+  event.preventDefault();
+
+  var city=$(".form-control").val();
+
+  var locationURL= "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=imperial&appid=849cc81e3938b0e67ca2c053350dac29"
+
+  $.ajax({
+    url: locationURL,
+    method: "GET"
+  }).then(function(response){
+  $("#cityTitle").text("cities title:" + response.name);
+  $("#cityTemperature").text("Temperature:" + response.main.temp);
+  $("#cityHumidity").text("Humidity:" + response.main.humidity);
+  $("#cityWindspeed").text("Windspeed:" + response.wind.speed);
+  });
+})

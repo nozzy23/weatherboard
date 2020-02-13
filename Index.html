@@ -27,14 +27,17 @@
       </div>
 
     <!-- Search form -->
-<form class="form-inline md-form form-sm search">
-    <input class="form-control form-control-sm mr-3 w-75 cities" type="text" placeholder="Search"
-      aria-label="Search">
-    <i class="fas fa-search" aria-hidden="true"></i>
-  </form>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"
+          id="toDestination" placeholder="please Enter City,State">
+          <button type="button" class="btn btn-lg btn btn-city">Enter</button>
+        </div>
+     </div>
     <!--putting my search history here-->
       <ul class="searchHistory">
-        <li class="list-group-item">example</li>
+        <li class="list-group-item"></li>
       </ul>
 
       <!--where my information of city will show!-->
@@ -45,7 +48,7 @@
       <div id="UVindex"></div>
 
       <!--showing my five day forcast-->
-    <div></div>
+    <div id="fiveDayCast"></div>
 
 
 
@@ -53,13 +56,14 @@
 
 
     <!-- Optional JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="code.js"></script>
+    
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="code.js"></script>
 
   </body>
 </html>
