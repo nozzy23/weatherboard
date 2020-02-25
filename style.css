@@ -1,10 +1,36 @@
+.jumbotron
+{
+    background-image: url("./assets/pictures/sun-pattern.png");
+    width: auto;
+    height: 200px;
+}
+
 .searchHistory
 {
-    width: 300px;
+    width: 250px;
     margin-right: 50px;
 }
 .search
 {
-    width: 300px;
+    width: 100px;
     margin-right: 50px;
+}
+.form-control
+{
+    width: 200px;
+    margin-left: 30px;
+    display: inline;
+}
+.btn-city
+{
+    border: solid;
+    height: 45px;
+}
+#info
+{
+    display: inline;
+}
+.row
+{
+    display: inline;
 }
