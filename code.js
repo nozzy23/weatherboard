@@ -15,6 +15,7 @@
  The lon and lat of the city is located in the object. So I need to get the input of the city get the lat and lon build that onto the new url string and display on screen.
  */
 
+$("#fiveDayCast").hide();
 
 var apiKey= "849cc81e3938b0e67ca2c053350dac29";
 
@@ -37,6 +38,7 @@ var userCity= $(".btn-city").on("click",function(e) {
 // completed. gets value and display city.
 $(".btn-city").on("click", function(event){
   event.preventDefault();
+  $("#fiveDayCast").show();
   var city=$(".form-control").val();
   var locationURL= "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=imperial&appid=" + apiKey;
   $.ajax({
