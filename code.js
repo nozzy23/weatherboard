@@ -44,12 +44,10 @@ $(".btn-city").on("click", function(event){
     url: locationURL,
     method: "GET"
   }).then(function(response){
-  $("#cityTitle").text("City Title: " + response.name);
+  $("#cityTitle").text(response.name);
   $("#cityTemperature").text("Temperature: " + response.main.temp);
   $("#cityHumidity").text("Humidity: " + response.main.humidity);
   $("#cityWindspeed").text("Windspeed: " + response.wind.speed);
-  $("#lon").text(response.coord.lon);
-  $("#lat").text(response.coord.lat);
   });
 });
 
@@ -83,7 +81,6 @@ $(".btn-city").on("click", function(event){
       url: UvIndexURL,
       method: "GET"
     }).then(function(response){
-      console.log(response);
       $("#UVindex").text("cities UV Index: " + response.value);
     })
   })
@@ -97,22 +94,57 @@ $(".btn-city").on("click", function(event){
 $(".btn-city").on("click", function(event){
   event.preventDefault();
   var city=$(".form-control").val();
-  var fiveDayUrl = "http://api.openweathermap.org/data/2.5/forecast?q="+ city + "&appid=" + apiKey;
+  var fiveDayUrl = "http://api.openweathermap.org/data/2.5/forecast?q="+ city+ "&appid=" + apiKey;
 
   $.ajax({
     url: fiveDayUrl,
     method: "GET"
   }).then(function(response){
-    var fiveDayIcon = (response.weatherdata.forecast)
-    var iconSpot = $("<img>").attr("src", fiveDayIcon);
-    $("#fiveDayCast").append(iconSpot);
+    console.log("5days", response);
+    $(".card-titleOne").text(response.list[0].dt_txt);
+    $(".card-temp").text("Temp " + response.list[0].main.temp)
+    $(".card-humidity").text("Humid: " +response.list[0].main.humidity)
+    $(".card-titleTwo").text(response.list[1].dt_txt);
+    $(".card-tempTwo").text("Temp " + response.list[1].main.temp)
+    $(".card-humidityTwo").text("Humid: " +response.list[1].main.humidity)
+    $(".card-titleThree").text(response.list[2].dt_txt);
+    $(".card-tempThree").text("Temp " + response.list[2].main.temp)
+    $(".card-humidityThree").text("Humid: " +response.list[2].main.humidity)
+    $(".card-titleFour").text(response.list[3].dt_txt);
+    $(".card-tempFour").text("Temp " + response.list[3].main.temp)
+    $(".card-humidityFour").text("Humid: " + response.list[3].main.humidity)
+    $(".card-titleFive").text(response.list[4].dt_txt);
+    $(".card-tempFive").text("Temp " + response.list[4].main.temp)
+    $(".card-humidityFive").text("Humid: " +response.list[4].main.humidity)
   })
 
 })
+//Time
+var dateTime = null,
+    date = null;
 
-//Local storage 
+var newTime= function() {
+  date= moment(new Date())
+  dateTime.html(date.format('MMMM Do YYYY,'));
+};
+$(document).ready(function(){
+  dateTime= $("#searchTime")
+  update();
+  setInterval(update, 1000);
+});
+
+var update = function() {
+    date = moment(new Date())
+    dateTime.html(date.format('dddd, MMMM Do YYYY,'));
+};
+$(document).ready(function(){
+    dateTime= $(".lead")
+    update();
+    setInterval(update, 1000);
+});
+
+//Local storage  
 function sayCity(){
-  console.log($("#firstCity").val())
   localStorage.setItem("cityOne",$(".list-group-item").val());
 }
 

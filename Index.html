@@ -23,6 +23,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Weather DashBoard</h1>
+          <p class="welcome"> Local Weather Information!</p>
           <p class="lead"> Local Weather Information!</p>
         </div>
       </div>
@@ -43,6 +44,7 @@
 
       <!--where my information of city will show!-->
       <div id="info">
+      <div id="searchTime"></div>
       <div id="cityTitle"></div>
       <div id="cityTemperature"></div>
       <div id="cityHumidity"></div>
@@ -54,39 +56,45 @@
     <div id="fiveDayCast">
       <div class="card-group">
         <div class="card">
-          <img class="card-img-top" src="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">blank</p>
+            <h5 class="card-titleOne"></h5>
+            <p class="card-temp"></p>
+            <p class="card-humidity"></p>
           </div>
         </div>
+
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">blank</p>
+            <h5 class="card-titleTwo"></h5>
+            <p class="card-tempTwo"></p>
+            <p class="card-humidityTwo"></p>
           </div>
         </div>
+
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">blank</p>
+            <h5 class="card-titleThree"></h5>
+            <p class="card-tempThree"></p>
+            <p class="card-humidityThree"></p>
           </div>
         </div>
+
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">blank.</p>
+            <h5 class="card-titleFour"></h5>
+            <p class="card-tempFour"></p>
+            <p class="card-humidityFour"></p>
           </div>
         </div>
+
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">blank</p>
+            <h5 class="card-titleFive"></h5>
+            <p class="card-tempFive"></p>
+            <p class="card-humidityFive"></p>
           </div>
+
         </div>
       </div>
     </div>
@@ -105,6 +113,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="code.js"></script>
+    <script src="library/moment.js"></script>
 
   </body>
 </html>

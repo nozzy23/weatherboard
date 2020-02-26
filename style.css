@@ -1,7 +1,7 @@
 body
 {
     background-image: url("./assets/pictures/redcloud.jpg");
-    background-size: 1300px 700px;
+    background-size: 1300px 1300px;
     background-repeat: no-repeat;
 }
 
@@ -37,6 +37,9 @@ body
 #info
 {
     display: inline;
+    color:white;
+    margin-right: 200px;
+    background-color: teal;
 }
 .row
 {
